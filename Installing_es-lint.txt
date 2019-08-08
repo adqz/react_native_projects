@@ -1,0 +1,8 @@
+Every time you make a new project, you have to install es-lint for it and the specified set of rules you want to follow
+
+1. Open the project folder (eg: albums)
+2. Execute in Terminal: sudo npm install -g eslint
+3. Execute in Terminal: sudo npm install --save-dev eslint-config-rallycoding
+4. Open VS code IDE, go to file named '.eslintrc.js'
+5. Set extends key to 'eslint-config-rallycoding'
+6. Done
