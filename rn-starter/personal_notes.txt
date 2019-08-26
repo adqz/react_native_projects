@@ -1,0 +1,18 @@
+----------Naming conventions----------
+1. Fat arrow functions: Camel case, initial is capital
+2. Variables: camel case, initial is small
+3. .js files: camel case, initial is capital
+4. Component names: same as .js files coz they share same name
+
+
+----------App.js----------
+
+1. We write jsx in react which is then converted to javascript by this thing called "babel" which is a javascript compiler running in the react-native bundler
+2. "createStackNavigator" is an object which stores what content will be shown on the screen at any given point in time
+3. 
+
+
+
+--------ComponentsScreen.js------------
+
+1. "StyleSheet.create" validates the properties so we get better error messages if we misspell any property (eg - fontsize instead of fontSize)
