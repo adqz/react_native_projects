@@ -16,3 +16,25 @@
 --------ComponentsScreen.js------------
 
 1. "StyleSheet.create" validates the properties so we get better error messages if we misspell any property (eg - fontsize instead of fontSize)
+
+
+----------CounterScreen.js----------
+1. 'useState()' function needs to be used to initialize a variable as a state
+2. A state's value can't be changed directly. Its respective function needs to be used to update it. For example - 
+
+const [counter, setCounter] = useState(0); //initialize with default value of 0
+setCounter(counter+1) //to increase value of counter by 1
+
+Cannot do this:  counter = counter + 1;
+
+3. When state value is changed, the whole component get re-rendered. Also, all children of the component get re-rendered too.
+
+
+----------ColorScreen.js----------
+1. Use back ticks for string formatting. For eg - 
+A = 234.134;
+B = 252.345;
+
+ans = `${A} + ${B} = ${A+B}` // these are backpacks, not single quotes
+
+2. 
