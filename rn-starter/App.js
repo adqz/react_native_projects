@@ -24,7 +24,7 @@ const navigator = createStackNavigator(
   {
     initialRouteName: 'Home', //first component to be displayed
     defaultNavigationOptions: {
-      title: 'App'
+      title: ''
     }
   }
 );

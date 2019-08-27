@@ -37,4 +37,9 @@ B = 252.345;
 
 ans = `${A} + ${B} = ${A+B}` // these are backpacks, not single quotes
 
-2. 
+----------BoxScreen.js----------
+1. Box object model is used just for a single element
+2. Flex model is used to place children element relative to each other inside a parent. It controls the layout of the children components but is applied on the parent.
+3. flexDirection decides direction of the primary axis along which to align items whereas justifyContent lays out children along the primary axis
+4. alignSelf is applied on children and overrides alignItem for that child only
+5. flex decides how much space each child gets 
