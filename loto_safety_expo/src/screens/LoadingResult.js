@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 
 const LoadingResult = ({ navigation }) => {
   const imageURI = navigation.getParam('uri', null);
-  console.log(typeof imageURI)
+  // console.log(typeof imageURI)
   if (imageURI === null) {
     return (
       <View>
