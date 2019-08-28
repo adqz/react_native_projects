@@ -38,6 +38,7 @@ const CameraScreen_trial = ( {navigation} ) => {
     if (camera) {
       let photo = await camera.takePictureAsync(quality=1.0, exif=true, base64=true);
       const asset = await MediaLibrary.createAssetAsync(photo.uri);
+      navigation.navigate('Loading', {uri: photo.uri})
       // console.log(photo.uri)
     }
   };
