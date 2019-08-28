@@ -1,0 +1,7 @@
+Command to create this project
+
+1. npx expo-cli init loto_safety_expo
+2. Cd loto_safety_expo
+3. npm install react-navigation
+4. npx expo-cli install react-native-gesture-handler react-native-reanimate
+5. npm start  
