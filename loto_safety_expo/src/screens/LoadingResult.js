@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text, Image, View, StyleSheet } from 'react-native';
 import Spinner from '../components/Spinner';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import MyButton from '../components/MyButton'
 
 const LoadingResult = ({ navigation }) => {
   const imageURI = navigation.getParam('uri', null);
@@ -15,27 +18,25 @@ const LoadingResult = ({ navigation }) => {
   else { 
     return (
       <View style={styles.viewMain}>
-        {/* Header */}
-        <View style={styles.view1}>
-          <Image
-            source = {require('../../assets/loto-logo.png')} //put tag photo, not logo
-            style = {styles.image1a}
-          />
-          <View style = {styles.view1b}>
-            <Text style={styles.text1b1}> Loading </Text>
-          </View>
-        </View>
+        <Header title='Loading Result'/>
         {/* Image with spinner */}
-        <View style={styles.view2}> 
+        <View style={styles.view1}> 
           <Image 
             source = {{uri: imageURI}}
-            style = {styles.image2a}
+            style = {styles.image1a}
           />
-          <View style={styles.view2b}>
-            <Spinner size='large' spinnerColor='red'/>
+          <View style={styles.view1b}>
+            <Spinner size='large' spinnerColor='black'/>
           </View>
         </View>
-
+        
+        <View style = {styles.buttonStyle}>
+          <MyButton 
+            onPress = { () => navigation.navigate('Confirm', {uri: imageURI})}
+            text = "Move to confirm page (temp button)"
+          />
+      </View>
+        <Footer title='LOTO Safety Products'/>
       </View>
     );
   }
@@ -44,44 +45,26 @@ const LoadingResult = ({ navigation }) => {
 const styles = StyleSheet.create({
   viewMain: {
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    marginBottom: 40,
+    justifyContent: 'space-between',
     flex: 1,
   },
   view1: {
-    flex: 1.1,
-    borderWidth: 2,
-    borderColor: 'green',
-    justifyContent: 'center',
-  },
-  image1a: {
-    flex: 1,
-    opacity: 0.2,
-    alignSelf: 'center',
-  },
-  view1b: {
-    justifyContent: 'center',
-    ...StyleSheet.absoluteFillObject
-  },
-  text1b1: {
-    fontSize: 50,
-    fontFamily: 'Arial',
-    alignSelf: 'center',
-  },
-  view2: {
-    flex: 5,
+    flex: 0.8,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     borderWidth: 2,
     borderColor: 'red',
   },
-  image2a: {
+  image1a: {
     flex: 1,
-    borderRadius: 10,
+    // borderRadius: 10,
   },
-  view2b: {
+  view1b: {
     alignSelf: 'center',
     ...StyleSheet.absoluteFillObject
+  },
+  buttonStyle:{
+    flex: 0.2
   }
 });
 

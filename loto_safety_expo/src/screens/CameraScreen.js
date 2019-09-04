@@ -4,7 +4,7 @@ import { Camera } from 'expo-camera';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import * as Permissions from 'expo-permissions';
 import * as MediaLibrary from 'expo-media-library';
-import * as ImagePicker from 'expo-image-picker';
+// import * as ImagePicker from 'expo-image-picker';
 
 const CameraScreen = ( {navigation} ) => {
   const [cameraPermission, setCameraPermission] = useState(null);
@@ -38,7 +38,7 @@ const CameraScreen = ( {navigation} ) => {
     if (camera) {
       let photo = await camera.takePictureAsync(quality=1.0, exif=true, base64=true);
       const asset = await MediaLibrary.createAssetAsync(photo.uri);
-      navigation.navigate('Loading', {uri: photo.uri})
+      navigation.navigate('Loading', {uri: photo.uri});
       // console.log(photo.uri)
     }
   };

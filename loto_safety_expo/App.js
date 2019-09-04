@@ -1,25 +1,43 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from './src/screens/HomeScreen';
-import CameraScreen from './src/screens/CameraScreen_legacy';
-import CameraScreen_trial from './src/screens/CameraScreen';
+import CameraScreen from './src/screens/CameraScreen';
 import LoadingResult from './src/screens/LoadingResult';
-import PickFromGallery from './src/screens/PickFromGallery';
-import MainCard from './src/components/MainCard';
+import TestScreen from './src/screens/TestScreen';
+import ConfirmPrediction from './src/screens/ConfirmPrediction';
 
 const navigator = createStackNavigator(
   {
-  Home: HomeScreen,
-  Camera: CameraScreen,
-  Camera_trial: CameraScreen_trial,
-  Loading: LoadingResult,
-  Gallery: PickFromGallery,
-  Main: MainCard,
-  }, 
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: { headerTitle: 'Home' }
+    },
+    Camera :{
+      screen: CameraScreen,
+      navigationOptions: { headerTitle: 'Camera' }
+    },
+    Loading: {
+      screen: LoadingResult,
+      navigationOptions: { headerTitle: 'Loading' }
+    },
+    Test: {
+      screen: TestScreen,
+      navigationOptions: { headerTitle: 'Test' }
+    },
+    Confirm: {
+      screen: ConfirmPrediction,
+      navigationOptions: { headerTitle: 'Confirm' }
+    },
+  },
+
   {
   initialRouteName: 'Home',
-  defaultNavigationOptions: {
-    title: 'Home'
-  }
+  headerMode: 'float',
+  // defaultNavigationOptions: {
+  //   title: 'Home'
+  // }
+  navigationOptions: ({ navigation }) => ({
+    title: `${navigation.state.params.name}`,
+  }),
 
 })
 

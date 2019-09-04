@@ -3,6 +3,8 @@ import { Text, Image, View, StyleSheet, } from 'react-native';
 import MyButton from '../components/MyButton';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const HomeScreen = ({ navigation }) => {
 
@@ -22,7 +24,7 @@ const HomeScreen = ({ navigation }) => {
       allowsEditing: true,
       aspect: [1, 1],
     });
-    console.log(result);
+    // console.log(result);
     if (!result.cancelled) {
       setImage(result.uri)
       navigation.navigate('Loading', {uri: result.uri})
@@ -31,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.firstViewTagStyle}>
-      {/* <Text style={styles.imageOneStyle}>Image 1</Text> */}
+      <Header title='Home'/>
       <Image
         source = {require("../../assets/loto-logo.png")}
         style = {styles.imageOneStyle}
@@ -39,18 +41,18 @@ const HomeScreen = ({ navigation }) => {
       <View style = {styles.buttonStyle}>
         <MyButton 
           onPress={() => _pickImage()}
-          children = "Choose from gallery"
+          text = "Choose from gallery"
         />
         <MyButton 
-          onPress = { () => navigation.navigate('Camera_trial')}
-          children = "Click Picture"
+          onPress = { () => navigation.navigate('Camera')}
+          text = "Click Picture"
         />
       </View>
       <Image
         source = {require("../../assets/lok-force-logo.png")}
         style = {styles.imageTwoStyle}
-        // resizeMethod = 'scale'
       />
+      <Footer title='LOTO Safety Products' />
     </View>
   );
 }
@@ -58,8 +60,8 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   firstViewTagStyle: {
     flexDirection: 'column',
-    justifyContent: 'center',
-    marginVertical: 10,
+    justifyContent: 'space-between',
+    // marginVertical: 10,
     flex: 1,
   },
   imageOneStyle: {
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 2,
     borderColor: 'orange',
-    marginBottom: 20
+    // marginBottom: 20
   },
   buttonStyle: {
     borderWidth: 2,

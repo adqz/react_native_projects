@@ -4,7 +4,11 @@ import { View, ActivityIndicator } from 'react-native';
 const Spinner = ({ size, spinnerColor }) => {
     return (
         <View style={styles.spinnerStyle}>
-            <ActivityIndicator size={size || 'large'} color={spinnerColor || 'red'}/>
+            <ActivityIndicator 
+                size={size || 'large'} 
+                color={spinnerColor || 'black'}
+                style={{backgroundColor: 'white', borderRadius: 5, opacity: 0.6}}
+            />
         </View>
     );
 };

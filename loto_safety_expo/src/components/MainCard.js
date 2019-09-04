@@ -3,31 +3,26 @@ import { Text, View, StyleSheet, } from 'react-native';
 
 const MainCard = () => {
   return (
-    <View >
-      <View style={styles.header}/>
-        <Text> Filler </Text>
-      <View style={styles.footer}/>
+    <View styles={styles.mainView}>
+      <View styles={styles.body}> 
+        <Text styles={{fontSize: 45}}> Body part </Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  header: {
-    borderWidth: 2,
-    borderColor: 'yellow',
-    borderRadius: 10,
-    backgroundColor: 'grey',
-    height: 50,
-    width: undefined,
+  mainView: {
+    flex: 1,
+    backgroundColor: 'gray',
+    justifyContent: 'center',
   },
-  footer: {
-    borderWidth: 2,
-    borderColor: 'red',
-    borderRadius: 10,
-    backgroundColor: 'grey',
-    height: 50,
-    width: undefined,
-  }
+  body: {
+    backgroundColor: 'blue',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default MainCard;
