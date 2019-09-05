@@ -51,12 +51,15 @@ const styles = StyleSheet.create({
   view1: {
     flex: 0.8,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     borderWidth: 2,
     borderColor: 'red',
+    backgroundColor: 'rgba(18,78,134,0.4)'
   },
   image1a: {
-    flex: 1,
+    // flex: 1,
+    aspectRatio: 1,
+    borderWidth: 1,
     // borderRadius: 10,
   },
   view1b: {

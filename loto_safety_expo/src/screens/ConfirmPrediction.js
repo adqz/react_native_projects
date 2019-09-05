@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, Image, View, StyleSheet, Dimensions } from 'react-native';
 import MyButton from '../components/MyButton';
 import Header from '../components/Header';
@@ -7,6 +7,7 @@ import ImageDetail from '../components/ImageDetail';
 
 const ConfirmPrediction = ({ navigation }) => {
   const imageURI = navigation.getParam('uri', null);
+  const [status, setStatus] = useState(null);
   return (
     <View style={styles.viewMain}>
       <Header title='Confirm Prediction'/>
@@ -26,14 +27,14 @@ const ConfirmPrediction = ({ navigation }) => {
       </View>
       <View style = {styles.view3}>
         <MyButton 
-          // onPress={ }
+          onPress={ () => navigation.navigate('Feedback') }
           text = "No"
           bgColor = 'red'
           fontSize = {30}
           fontColor = 'white'
         />
         <MyButton 
-          // onPress = { }
+          onPress = { () => navigation.navigate('Successful') }
           text = "Yes"
           bgColor = 'green'
           fontSize = {30}
@@ -81,27 +82,3 @@ const styles = StyleSheet.create({
 });
 
 export default ConfirmPrediction;
-
-/*
-<View style={styles.view3}>
-        <Image 
-          source = {require('../../assets/hasp-steel-hsp-pmh-25r.jpg')}
-          style = {styles.image3a}
-        />
-        <Image 
-          source = {require('../../assets/hasp-steel-hsp-pmh-25r.jpg')}
-          style = {styles.image3b}
-        />
-      </View>
-
-      <View style = {styles.buttonStyle}>
-        <MyButton 
-          onPress={() => _pickImage()}
-          text = 'Yes'
-        />
-        <MyButton 
-          onPress = { () => navigation.navigate('Confirm')}
-          text = "No"
-        />
-      </View>
-*/
