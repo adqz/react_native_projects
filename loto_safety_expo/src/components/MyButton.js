@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const MyButton = ({ onPress, text, bgColor, fontSize, fontColor }) => {
-
+const MyButton = ({ onPress, text, bgColor, fontSize, fontColor, horizontalPadding }) => {
+  
   return (
     <TouchableOpacity 
       onPress={onPress}
@@ -13,8 +13,7 @@ const MyButton = ({ onPress, text, bgColor, fontSize, fontColor }) => {
         borderRadius: 5,
         borderWidth: 1,
         borderColor: '#007aff',
-        marginLeft: 5,
-        marginRight: 5,
+        marginHorizontal: horizontalPadding>=0 ? horizontalPadding:5,
         justifyContent: 'space-around', //newly added
       }}
     >
