@@ -44,7 +44,7 @@ const HomeScreen = ({ navigation }) => {
           text = "Choose from gallery"
         />
         <MyButton 
-          onPress = { () => navigation.navigate('Camera')}
+          onPress = { () => navigation.navigate('Test')}
           text = "Click Picture"
         />
       </View>
